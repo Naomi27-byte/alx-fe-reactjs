@@ -4,7 +4,6 @@ import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Counter from './components/Counter';
 
-
 function App() {
   return (
     <div>
