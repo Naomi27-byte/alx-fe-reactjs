@@ -1,12 +1,8 @@
 import React from 'react';
-import { useRecipeStore } from '../store/recipeStore';
+import useRecipeStore from '../store/recipeStore';
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
-
-  if (!recipes || recipes.length === 0) {
-    return <div>No recipes yet. Add one above!</div>;
-  }
 
   return (
     <div>
