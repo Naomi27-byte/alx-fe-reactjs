@@ -1,13 +1,9 @@
-import { useState } from "react";
+// src/components/recipeStore.js
+import { create } from 'zustand';
 
-const useRecipeStore = () => {
-  const [recipes, setRecipes] = useState([]);
-
-  const addRecipe = (recipe) => {
-    setRecipes([...recipes, recipe]);
-  };
-
-  return { recipes, addRecipe };
-};
-
-export default useRecipeStore;
+export const useRecipeStore = create((set) => ({
+  recipes: [],
+  addRecipe: (newRecipe) =>
+    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
+  setRecipes: (recipes) => set({ recipes }),
+}));
